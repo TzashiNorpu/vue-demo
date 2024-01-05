@@ -1,0 +1,1 @@
+export {UserServiceIns} from './user'
