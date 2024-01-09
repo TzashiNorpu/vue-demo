@@ -21,12 +21,12 @@ const fetchData = async (url, options = {}) => {
 };
 class http {
   GET(url, data) {
-
     if (!(url instanceof URL))
       url = new URL(url);
 
-    for (let [k, v] of Object.entries(data))
-      url.searchParams.append(k, v);
+    if (data)
+      for (let [k, v] of Object.entries(data))
+        url.searchParams.append(k, v);
 
     const option = {
       headers: {'Content-Type': "application/x-www-form-urlencoded"},

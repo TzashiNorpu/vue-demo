@@ -6,7 +6,7 @@ const handler1 = async () => {
   console.log("res", res);
 }
 const handler2 = async () => {
-  let res = await UserServiceIns.getUserInfo({userId: 111});
+  let res = await UserServiceIns.register();
   console.log("res", res);
 }
 </script>

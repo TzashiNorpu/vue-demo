@@ -1,1 +1,2 @@
-export {UserServiceIns} from './user'
+export {UserServiceIns} from './userService';
+export {TestServiceIns} from './testService';
