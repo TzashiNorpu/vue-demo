@@ -6,10 +6,10 @@ class UserService {
     return HTTP.POST(UserUrls.login, data);
   }
   async register(data = {}) {
-    return HTTP.POST(UserUrls.register, data);
+    return HTTP.POST(UserUrls.user, data);
   }
   async getUserInfo({userId}) {
-    return HTTP.GET(UserUrls.userInfo, {userId});
+    return HTTP.GET(UserUrls.user, {userId});
   }
 }
 

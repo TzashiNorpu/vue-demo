@@ -2,11 +2,11 @@
 import {UserServiceIns} from '../services';
 
 const handler1 = async () => {
-  let res = await UserServiceIns.login({name: "norpu", passwd: "123", verify_code: "hqlw"});
+  let res = await UserServiceIns.login({username: "tsering", password: "123"});
   console.log("res", res);
 }
 const handler2 = async () => {
-  let res = await UserServiceIns.register();
+  let res = await UserServiceIns.register({username: "tsering", password: "123", deptId: 123, orgId: 456});
   console.log("res", res);
 }
 </script>

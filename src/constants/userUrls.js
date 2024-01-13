@@ -1,8 +1,7 @@
 import {getBaseUrl} from "@/utils";
 
 export const UserUrls = {
-  userInfo: `${getBaseUrl()}/user`,
+  user: `${getBaseUrl()}/user`,
   login: `${getBaseUrl()}/login`,
-  register: `${getBaseUrl()}/register`
 }
 
