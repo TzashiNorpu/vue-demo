@@ -1,4 +1,14 @@
 import {HTTP_METHOD} from '../constants'
+import {decrypt, encrypt} from './encrypt'
+
+BigInt.prototype.toJSON = function () {
+  return this.toString();
+};
+
+const requestInteceptor = (url, option) => {
+  if(option?.body)
+    option.body = encrypt(option.body)
+}
 
 const fetchData = async (url, options = {}) => {
   try {
@@ -10,8 +20,13 @@ const fetchData = async (url, options = {}) => {
       ...restOption
     };
     console.log("option=", initOption);
+    // 请求拦截
+    requestInteceptor(url, initOption);
     const response = await fetch(url, initOption);
+    console.log("response", response);
     let res = await response.json();
+    // 响应拦截
+    responseInteceptor(res);
     console.log("res", res);
     return res;
   } catch (e) {

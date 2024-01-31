@@ -1,2 +1,3 @@
 export {UserServiceIns} from './userService';
-export {TestServiceIns} from './testService';
+export {RoleServiceIns} from './roleService';
+export {MenuServiceIns} from './menuService';

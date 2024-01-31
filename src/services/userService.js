@@ -3,13 +3,18 @@ import {HTTP} from "@/utils";
 
 class UserService {
   async login(data) {
-    return HTTP.POST(UserUrls.login, data);
+    return await HTTP.POST(UserUrls.login, data);
+  }
+  async logout() {
+    // todo
+    return null;
   }
   async register(data = {}) {
-    return HTTP.POST(UserUrls.user, data);
+    return await HTTP.POST(UserUrls.user, data);
   }
-  async getUserInfo({userId}) {
-    return HTTP.GET(UserUrls.user, {userId});
+
+  async addUserRole(data = {}) {
+    return await HTTP.POST(UserUrls.addUserRole, data);
   }
 }
 
